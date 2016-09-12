@@ -1,11 +1,5 @@
-FROM ubuntu:14.04
+FROM alpine:3.4
 MAINTAINER info@funkwerk-itk.com
-
-ENV TINI_VERSION v0.10.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-ENTRYPOINT ["/tini", "--"]
-
-# xmllint
-RUN apt-get -y update && apt-get -y install curl libxml2-utils && \
-  rm -rf /var/lib/apt/lists/*
+RUN apk add --update --no-cache libxml2-utils tini && \
+  rm -rf /var/cache/apk/*
+ENTRYPOINT ["/usr/bin/tini", "--"]
