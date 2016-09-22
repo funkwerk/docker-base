@@ -6,11 +6,13 @@
 Funkwerk's base docker image:
 - based on ubuntu LTS
 - uses tini as a minimal init
-- xmllint and curl additionally preinstalled from the ubuntu archives
+- xmllint preinstalled from the ubuntu archives
 
 ## Usage
 
-docker run -t funkwerk/base https://github.com/
+docker run -t funkwerk/base /bin/bash
+
+Generally only useful as a base for further packages.
 
 ## Version
 
