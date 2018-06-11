@@ -9,6 +9,13 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
-# Preinstall xmllint
-RUN apt-get -y update && apt-get -y install libxml2-utils && \
+# Preinstall tools
+RUN apt-get -y update && apt-get -y install \
+  gdb \
+  iputils-ping \
+  libxml2-utils \
+  net-tools \
+  netcat \
+  telnet \
+  vim && \
   rm -rf /var/lib/apt/lists/*
