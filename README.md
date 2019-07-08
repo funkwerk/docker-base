@@ -16,6 +16,6 @@ Generally only useful as a base for further packages.
 
 ## Version
 
-0.1.0
- - ubuntu 14.04
+1.2.0
+ - ubuntu 18.04
  - tini 0.10.0
