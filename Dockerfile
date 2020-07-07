@@ -11,6 +11,7 @@ ENTRYPOINT ["/tini", "--"]
 
 # Preinstall tools
 RUN apt-get -y update && apt-get -y install \
+  gosu \
   gdb \
   iputils-ping \
   libxml2-utils \
