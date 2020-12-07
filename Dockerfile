@@ -10,7 +10,7 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 # Preinstall tools
-RUN apt-get -y update && apt-get -y install \
+RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   gosu \
   gdb \
   iputils-ping \
@@ -18,5 +18,6 @@ RUN apt-get -y update && apt-get -y install \
   net-tools \
   netcat \
   telnet \
+  tzdata \
   vim && \
   rm -rf /var/lib/apt/lists/*
